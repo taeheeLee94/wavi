@@ -14,7 +14,6 @@ import os
 
 app = FastAPI()
 
-# CORS 설정: 어디서든 호출 가능하게
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -23,10 +22,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 엑셀 파일 고정 경로
 EXCEL_PATH = "warehouse.xlsx"
 
-# 서버 시작 시 엑셀에서 grid 불러오기
 if not os.path.exists(EXCEL_PATH):
     raise FileNotFoundError(f"엑셀 파일이 존재하지 않습니다: {EXCEL_PATH}")
 
@@ -74,10 +71,9 @@ def get_route(via: str = Query(..., description="경유지 목록, 쉼표로 구
     if full_route is None:
         return {"error": "경로 재구성에 실패했습니다."}
 
-    # 시각화를 위한 grid 정보 생성
     grid_info = {}
     for (r, c), cell in grid.items():
-        grid_info[f"{r},{c}"] = cell["type"]  # "Corridor", "warehouse", "START"
+        grid_info[f"{r},{c}"] = cell["type"]
 
     return {
         "start": start,
