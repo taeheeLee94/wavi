@@ -3,10 +3,6 @@ body {
   text-align: center;
   padding: 1rem;
 }
-#map {
-  height: 500px;
-  margin-top: 1rem;
-}
 input {
   padding: 0.5rem;
   width: 300px;
@@ -15,7 +11,11 @@ button {
   padding: 0.5rem 1rem;
   margin-left: 1rem;
 }
-#result {
+canvas {
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+}
+#status {
   margin-top: 1rem;
   font-weight: bold;
 }

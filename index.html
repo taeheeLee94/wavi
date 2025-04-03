@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>창고 네비게이션</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>🏭 창고 최단경로 시각화</h1>
+  <input type="text" id="waypoints" placeholder="예: e1, f70, C3" />
+  <button onclick="getRoute()">경로 계산</button>
+  <p id="status"></p>
+  <canvas id="warehouse" width="800" height="800"></canvas>
+  <script src="js/main.js"></script>
+</body>
+</html>
